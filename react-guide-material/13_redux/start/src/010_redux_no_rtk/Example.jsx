@@ -1,12 +1,14 @@
 import Counter from "./components/Counter";
 import { CounterProvider } from "./context/CounterContext";
-
-const Example = () => {
+import { Provider } from "react-redux";
+import store from "./store";
+import "./immer.js";
+function Example() {
   return (
-    <CounterProvider>
+    <Provider store={store}>
       <Counter />
-    </CounterProvider>
+    </Provider>
   );
-};
+}
 
 export default Example;
